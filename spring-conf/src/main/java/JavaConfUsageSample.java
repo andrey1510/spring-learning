@@ -1,14 +1,15 @@
+import configs.MyJavaFileConfig;
 import entities.Cat;
 import entities.Dog;
 import entities.Parrot;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class JavaConfig {
+public class JavaConfUsageSample {
 
     public static void main(String[] args) {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext("configs"  /* or Config.class */  );
+        ApplicationContext context = new AnnotationConfigApplicationContext(MyJavaFileConfig.class); //or "configs"  (i.e package)   );
         // интерфейс ApplicationContext применяется в Spring для сохранения всей информации о среде, относящейся к приложению, которым управляет Spring
         // создание экземпляра (context) класса AnnotationConfigApplicationContext, реализующего интерфейс ApplicationContext
         // context будет искать классы отмеченные аннотац. @Configuration в указанных пакетах ("configs") или классах, классы и пакеты можно указывать через запятую

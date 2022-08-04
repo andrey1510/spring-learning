@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class MyConfig {
+public class MyJavaFileConfig {
 
     @Bean // context вызовет методы, помеченные аннотацией @Bean     // равнозначно разметке <bean id="getCat" class="entities.Cat"/>
     public Cat getCat() {
