@@ -11,6 +11,7 @@
     <modules>
         <module>spring-autoconf</module>
         <module>spring-conf</module>
+        <module>jdbc-docker-sample</module>
     </modules>
 
     <dependencies>
@@ -19,6 +20,7 @@
             <artifactId>spring-context</artifactId>
             <version>5.3.22</version>
         </dependency>
+
     </dependencies>
 
     <properties>
