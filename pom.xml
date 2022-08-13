@@ -11,7 +11,7 @@
     <modules>
         <module>spring-autoconf</module>
         <module>spring-conf</module>
-        <module>jdbc-docker-sample</module>
+        <module>jdbc-spring-sample</module>
     </modules>
 
     <dependencies>
