@@ -4,7 +4,7 @@ import sample.JdbcTemplate.model.Singer;
 
 import java.util.List;
 
-public interface DaoInterface {
+public interface Dao {
 
     Singer findSingerById(Long id);
 

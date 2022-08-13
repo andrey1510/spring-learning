@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 import java.util.List;
 
 @Component
-public class DaoImplementation1 implements DaoInterface {
+public class DaoFirstImpl implements Dao {
 
     JdbcTemplate jdbcTemplate;
 
@@ -20,13 +20,12 @@ public class DaoImplementation1 implements DaoInterface {
     private final String SQL_INSERT_SINGER = "INSERT INTO singer(id, first_name, last_name) VALUES(?,?,?,?)";
 
     @Autowired
-    public DaoImplementation1(DataSource dataSource) {
+    public DaoFirstImpl(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
 
     @Override
-    //@Autowired
     public Singer findSingerById(Long id) {
         return jdbcTemplate.queryForObject(SQL_FIND_SINGER, new Object[] { id }, new SingerMapper());
     }
