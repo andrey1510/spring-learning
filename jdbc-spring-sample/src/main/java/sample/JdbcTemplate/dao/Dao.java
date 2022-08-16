@@ -3,7 +3,9 @@ package sample.JdbcTemplate.dao;
 import sample.JdbcTemplate.model.Singer;
 import java.util.List;
 
-public interface DaoJdbcTemplate {
+public interface Dao {
+
+    Long countSingersWithName(String first_name);
 
     String findFirstNameById(Long id);
 
@@ -18,5 +20,8 @@ public interface DaoJdbcTemplate {
     List<Singer> getAllSingers();
 
     int countSingers();
+
+    List<Singer> getSingerByFirstName(String firstName);
+
 
 }
