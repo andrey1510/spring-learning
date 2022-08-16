@@ -1,5 +1,8 @@
 package sample.JdbcTemplate.model;
 
+import org.springframework.context.annotation.Bean;
+
+
 public class Singer {
 
     public Singer() {}
@@ -51,5 +54,6 @@ public class Singer {
     public String toString() {
         return String.format("Singer [id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
     }
+
 
 }
