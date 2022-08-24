@@ -12,7 +12,6 @@
         <module>spring-autoconf</module>
         <module>spring-conf</module>
         <module>jdbc-spring-sample</module>
-        <module>jpa-sample</module>
     </modules>
 
     <dependencies>
