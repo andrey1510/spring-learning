@@ -1,23 +1,34 @@
 package sample.JdbcTemplate.model;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.context.annotation.Bean;
 
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@FieldDefaults(level= AccessLevel.PRIVATE)
 public class Singer {
 
-    public Singer() {}
+/*    // replaced with @NoArgsConstructor
+    public Singer() {}*/
 
+/*    // replaced with @AllArgsConstructor
     public Singer(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
+    }*/
 
-    private Long id;
-    private String firstName;
-    private String lastName;
-    //private int numberOfRows;
+    // replaced with @FieldDefaults
+    /*private*/ Long id;
+    /*private*/ String firstName;
+    /*private*/ String lastName;
 
+/*    // Replaced with @Data
     public Long getId() {
         return id;
     }
@@ -42,18 +53,10 @@ public class Singer {
         this.lastName = lastName;
     }
 
-    // public int getNumberOfRows() {
-     //   return numberOfRows;
-   // }
-
-   // public void setNumberOfRows(int numberOfRows) {
-    //    this.numberOfRows = numberOfRows;
-   // }
-
     @Override
     public String toString() {
         return String.format("Singer [id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
     }
-
+*/
 
 }

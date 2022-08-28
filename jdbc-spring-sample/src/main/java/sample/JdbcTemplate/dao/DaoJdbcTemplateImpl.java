@@ -1,6 +1,10 @@
 package sample.JdbcTemplate.dao;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import sample.JdbcTemplate.model.Singer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,6 +16,8 @@ import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
+@Transactional(readOnly = true, isolation = Isolation.REPEATABLE_READ)
 @Component("JdbcTempl")
 @Qualifier
 public class DaoJdbcTemplateImpl implements Dao {
@@ -51,18 +57,23 @@ public class DaoJdbcTemplateImpl implements Dao {
         return jdbcTemplate.queryForObject(SQL_FIND_SINGER, new Object[] { id }, new SingerMapper());
     }
 
+    @Transactional(readOnly = true)
     @Override
     public void addSinger(Singer singer) {
         System.out.println("--> Method of DaoJdbcTemplateImpl called"); // for test purposes
         jdbcTemplate.update(SQL_INSERT_SINGER, singer.getId(), singer.getFirstName(), singer.getLastName());
     }
 
+    @Modifying
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
     public void deleteSinger(Singer singer) {
         System.out.println("--> Method of DaoJdbcTemplateImpl called"); // for test purposes
         jdbcTemplate.update(SQL_DELETE_SINGER, singer.getId());
     }
 
+    @Modifying
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
     public void updateSinger(Singer singer) {
         System.out.println("--> Method of DaoJdbcTemplateImpl called"); // for test purposes

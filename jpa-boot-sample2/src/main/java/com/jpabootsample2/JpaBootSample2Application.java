@@ -1,5 +1,9 @@
 package com.jpabootsample2;
 
+import com.jpabootsample2.entities.ActorEntity;
+import com.jpabootsample2.repositories.ActorEntityRepository;
+import com.jpabootsample2.repositories.CityEntityRepository;
+import com.jpabootsample2.repositories.CountryEntityRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +20,9 @@ public class JpaBootSample2Application {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(ActorEntityRepository actorEntityRepository) {
+    CommandLineRunner commandLineRunner(ActorEntityRepository actorEntityRepository,
+                                        CityEntityRepository cityEntityRepository,
+                                        CountryEntityRepository countryEntityRepository) {
         return args -> {
 
             String dateTime = "2016-05-26 14:47:57.620000";
@@ -24,9 +30,9 @@ public class JpaBootSample2Application {
             LocalDateTime localDateTime = LocalDateTime.from(formatDateTime.parse(dateTime));
             Timestamp timestamp1 = Timestamp.valueOf(localDateTime);
 
+            System.out.println(countryEntityRepository.findAll());
 
-
-//            ActorEntity actor1 = new ActorEntity("L", "N", timestamp1);
+//            ActorEntity actor1 = new ActorEntity("New", "Actor", timestamp1);
 //            System.out.println(actorEntityRepository.save(actor1));
 //            System.out.println(actorEntityRepository.findById(2));
 //            System.out.println(actorEntityRepository.count());
