@@ -4,6 +4,8 @@ import com.jpabootsample2.entities.ActorEntity;
 import com.jpabootsample2.repositories.ActorEntityRepository;
 import com.jpabootsample2.repositories.CityEntityRepository;
 import com.jpabootsample2.repositories.CountryEntityRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,9 +17,13 @@ import java.time.format.DateTimeFormatter;
 @SpringBootApplication
 public class JpaBootSample2Application {
 
+    private static Logger logger = LoggerFactory.getLogger(JpaBootSample2Application.class);
+
     public static void main(String[] args) {
         SpringApplication.run(JpaBootSample2Application.class, args);
+        logger.info("App started with Log4j2 configuration");
     }
+
 
     @Bean
     CommandLineRunner commandLineRunner(ActorEntityRepository actorEntityRepository,

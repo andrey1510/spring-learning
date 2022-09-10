@@ -15,4 +15,5 @@ import java.util.List;
 public interface CountryEntityRepository extends JpaRepository<CountryEntity, Integer> {
 
 
+
 }

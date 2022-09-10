@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
-//@NoArgsConstructor
+@NoArgsConstructor
 //@AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Getter
 @Setter
 @FieldDefaults(level= AccessLevel.PRIVATE)

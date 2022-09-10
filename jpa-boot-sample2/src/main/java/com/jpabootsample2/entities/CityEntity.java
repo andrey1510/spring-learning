@@ -7,9 +7,9 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
-//@NoArgsConstructor
+@NoArgsConstructor
 //@AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -27,9 +27,9 @@ public class CityEntity {
     @Column(name = "city", nullable = false, length = 50)
     String city;
 
-    @Basic
-    @Column(name = "country_id", nullable = false)
-    Short countryId;
+//    @Basic
+//    @Column(name = "country_id", nullable = false)
+//    Short countryId;
 
     @Basic
     @Column(name = "last_update", nullable = false)
