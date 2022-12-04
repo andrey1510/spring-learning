@@ -36,17 +36,8 @@ public class JpaBootSample2Application {
             LocalDateTime localDateTime = LocalDateTime.from(formatDateTime.parse(dateTime));
             Timestamp timestamp1 = Timestamp.valueOf(localDateTime);
 
-            System.out.println(countryEntityRepository.findAll());
-
-//            ActorEntity actor1 = new ActorEntity("New", "Actor", timestamp1);
-//            System.out.println(actorEntityRepository.save(actor1));
-//            System.out.println(actorEntityRepository.findById(2));
-//            System.out.println(actorEntityRepository.count());
-//            System.out.println(actorEntityRepository.findAll());
-//            System.out.println(actorEntityRepository.findByFirstName("Zero"));
-//            System.out.println(actorEntityRepository.selectActorByFirstNameAndOverMinimumId("John", 4));
-//            System.out.println(actorEntityRepository.selectActorByFirstNameAndOverMinimumId2("John", 4));
-
+            //System.out.println(countryEntityRepository.findAll());
+            System.out.println(actorEntityRepository.findById(2));
          };
     }
 

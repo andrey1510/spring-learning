@@ -13,7 +13,7 @@ import java.util.Objects;
 @AllArgsConstructor
 //@NoArgsConstructor
 @Entity
-@Table(name = "actor2")
+@Table(name = "actor")
 public class Actor {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,9 +29,9 @@ public class Actor {
     @Column(name = "last_name", nullable = false, length = 45)
     private String lastName;
 
-//    @Basic
-//    @Column(name = "last_update", nullable = false)
-//    private Timestamp lastUpdate;
+    @Basic
+    @Column(name = "last_update", nullable = false)
+    private Timestamp lastUpdate;
 
     @Override
     public String toString() {
@@ -39,7 +39,7 @@ public class Actor {
                 "actorId=" + actorId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                // ", lastUpdate=" + lastUpdate +
+                 ", lastUpdate=" + lastUpdate +
                 '}';
     }
 
