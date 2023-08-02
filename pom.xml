@@ -12,6 +12,7 @@
         <module>spring-autoconf</module>
         <module>spring-conf</module>
         <module>jdbc-spring-sample</module>
+        <module>spring-learning-sample</module>
     </modules>
 
     <dependencies>

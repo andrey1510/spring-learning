@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/actor2/")
+@RequestMapping("/actor/")
 public class ActorController {
 
     private ActorService actorService;

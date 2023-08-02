@@ -1,16 +1,28 @@
 services:
   database:
-    image: dexels/dvdrental:latest
+    image: nerudista/dvdrental:latest
     container_name: dvdrental-container
     ports:
-      - 5432:5432
+      - 5438:5438
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: dvdrental
       POSTGRES_PASSWORD: tbs666V
+    networks:
+      backend:
+        aliases:
+          - "database"
   app-rest:
     build:
       context: .
       dockerfile: /Dockerfile
     ports:
       - 8080:8080
+    networks:
+      backend:
+        aliases:
+          - "app-rest"
+
+networks:
+  backend:
+      driver: bridge
