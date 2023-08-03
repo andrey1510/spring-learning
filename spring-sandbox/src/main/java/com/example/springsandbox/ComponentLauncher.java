@@ -1,15 +1,16 @@
 package com.example.springsandbox;
 
 
-import com.example.springsandbox.clients.Buyer;
-import com.example.springsandbox.clients.Seller;
+import com.example.springsandbox.clientsCom.Buyer;
+import com.example.springsandbox.clientsCom.Seller;
+import com.example.springsandbox.configs.ComponentConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class SpringSandboxApplication {
+public class ComponentLauncher {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ComponentConfig.class);
+
         Buyer buyer = context.getBean(Buyer.class);
         buyer.buySomething();
 

@@ -1,6 +1,6 @@
-package com.example.springsandbox.clients;
+package com.example.springsandbox.clientsCom;
 
-import com.example.springsandbox.services.SellService;
+import com.example.springsandbox.servicesCom.SellService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
