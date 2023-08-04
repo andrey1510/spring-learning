@@ -9,6 +9,7 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @Import(OtherConfig.class)
+@PropertySource("classpath:application.properties")
 public class AppConfig {
 
 
